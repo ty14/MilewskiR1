@@ -12,18 +12,16 @@
 correlation <- function (data = MER(),x = data$dep_delay, y = data$arr_delay, color1= "forestgreen", color2 = "firebrick", color3 = "dodgerblue") {
     library (ggplot2)
 
-    CORR<- cor(x, y, use = "complete.obs",  method = "pearson")
-
- out<- ggplot(data, aes(x = dep_delay, y = arr_delay, color = origin)) +
-      geom_point() +
+out  <- ggplot(data, aes(x = dep_delay, y = arr_delay, color = origin)) +
+      geom_point(alpha = .05) +
       scale_x_continuous(breaks=c(0,1))+
       stat_smooth(method='lm',se=F)+
       facet_wrap(~origin, scales = "free_x") +
-      geom_text(aes(label = CORR), parse = TRUE)
-      scale_color_manual(values=c(color1, color2, color3))
+      scale_color_manual(values=c(color1, color2, color3)) +
+      annotate(geom="text",x= 1, y = 1000, label = "R = ", round(cor(x, y)))
 
   return(out)
 
-}
-
+  }
 correlation()
+

@@ -16,7 +16,7 @@ Speedgraph  <- function (data = MER(), color1= "forestgreen", color2 = "firebric
   data.frame(df2)
 
   out <- ggplot(df2, aes(dep_delay, speed , group = origin, color = origin)) +
-    geom_point(size=1) +
+    geom_point(size = 1, alpha = 0.5) +
     xlab("Departure Delay (minutes)")+
     ylab("Speed (MPH)")+
     facet_wrap(~origin, scales = "free_x")+
