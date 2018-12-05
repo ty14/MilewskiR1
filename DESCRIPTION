@@ -1,0 +1,16 @@
+Package: MilewskiR1
+Type: Package
+Title: Milewski Class Assignment  
+Version: 0.1.0
+Author: c(person("Tyler M.", "Milewski", role = c("aut", "cre"),
+    email = "milewski@utexas.edu"))
+Maintainer: Tyler M. Milewski <milewski@utexas.edu>
+Description: Trying to complete this class assignment with appropriate function, while trying not getting angry.  
+Depends:  R (>= 3.4.0)
+License: GPL-3
+Imports: 
+        nycflights13, 
+        dplyr, 
+        ggplot2, 
+        magrittr
+RoxygenNote: 6.1.1
